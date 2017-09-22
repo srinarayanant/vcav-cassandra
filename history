@@ -1,0 +1,565 @@
+[root@vcav-cassandra1 conf]# history
+    1  ping google.com
+    2  ifconfig
+    3  show ip
+    4         ip addr
+    5  ping
+    6  ping 10.0.8.254
+    7  ping google.com
+    8  ping 10.0.8.254
+    9  ping 10.158.14.3
+   10  ping 10.158.14.1
+   11  yum install net-tools -y
+   12  ping 10.158.14.3
+   13  vi /etc/sysconfig/network-scripts/ifcfg-ens160 
+   14  vi /etc/sysconfig/network-scripts/ifcfg-ens192 
+   15  service network restart
+   16  ping google.com
+   17  yum install net-tools -y
+   18  ping google.com
+   19  ls /etc/**/*/*ens192
+   20  rm /etc/**/*/*ens192
+   21  service network restart
+   22  ping google.com
+   23  ping 10.0.0.206
+   24  ifconfig
+   25  ping 10.0.8.254
+   26  vi /etc/**/*/if*ens160
+   27  vi /etc/**/*/r*ens160
+   28  service network restart
+   29  ping 10.0.8.254
+   30  ping 10.0.0.254
+   31  ping 10.0.0.206
+   32  ping 10.0.0.206
+   33  vi /etc/sysconfig/network-scripts/route-ens160
+   34  vi /etc/sysconfig/network-scripts/route-ens192
+   35  service network restart
+   36  ping 10.0.0.206
+   37  ping google.com
+   38  ping 10.0.0.206
+   39  ping google.com
+   40  ping 10.0.0.206
+   41   
+   42  yum install ntp ntpdate ntp-doc -y
+   43  yum install nfs-utils nfs-utils-lib -y
+   44  chkconfig firewalld off
+   45  chkconfig ntpd on
+   46  systemctl disable chronyd
+   47  systemctl start ntpd
+   48  systemctl enable ntpd
+   49  ln -sf /usr/share/zoneinfo/UTC /etc/localtime
+   50  timedatectl set-timezone UTC
+   51  systemctl disable firewalld
+   52  systemctl stop firewalld
+   53  timedatectl set-timezone UTC
+   54  systemctl status firewalld
+   55  systemctl status ntpd
+   56  vi /etc/ntp.conf 
+   57  reboot
+   58  ifconfig
+   59  ip route
+   60  nm
+   61  cd /etc/sysconfig/network-scripts/
+   62  ls
+   63  rm ifcfg-ens192 
+   64  ls
+   65  cp ifcfg-ens160 ifcfg-ens160:1
+   66  vim ifcfg-ens160:1
+   67  service network restart
+   68  ip show
+   69  ip help
+   70  ip addr
+   71  ping 10.0.8.101
+   72  shutdown -h now
+   73  cd /etc/sysconfig/network-scripts/
+   74  ls
+   75  rm ifcfg-ens160:1
+   76  vim ifcfg-ens160 
+   77  vi /etc/hostname
+   78  reboot
+   79  cd /opt/
+   80  ls
+   81  yum install -y wget
+   82  wget http://www.apache.org/dyn/closer.lua/cassandra/2.2.9/apache-cassandra-2.2.9-bin.tar.gz
+   83  ls
+   84  tar -cvf apache-cassandra-2.2.9-bin.tar.gz 
+   85  tar -xvf apache-cassandra-2.2.9-bin.tar.gz 
+   86  cd /opt/
+   87  ls
+   88  tar -xvf apache-cassandra-2.2.9-bin.tar.gz cassandra
+   89  yum install unzip
+   90  tar -xvf apache-cassandra-2.2.9-bin.tar.gz cassandra
+   91  yum install gzip 
+   92  ls
+   93  ls -lrta
+   94  ls -lrtah
+   95  rm apache-cassandra-2.2.9-bin.tar.gz 
+   96  ls
+   97  wget http://www.apache.org/dyn/closer.lua/cassandra/2.2.9/apache-cassandra-2.2.9-bin.tar.gz
+   98  ls
+   99  rm apache-cassandra-2.2.9-bin.tar.gz 
+  100  wget http://mirror.fibergrid.in/apache/cassandra/2.2.9/apache-cassandra-2.2.9-bin.tar.gz
+  101  ls
+  102  tar -xvf apache-cassandra-2.2.9-bin.tar.gz cassandra
+  103  tar -xvf apache-cassandra-2.2.9-bin.tar.gz 
+  104  ls
+  105  cd apache-cassandra-2.2.9
+  106  ls
+  107  cd conf/
+  108  ls
+  109  exit
+  110  ls
+  111  nslookup vcav-cassanra1
+  112  nslookup vcav-cassandra1
+  113  yum install bind-utils -y
+  114  nslookup vcav-cassandra1
+  115  nslookup vcav-cassandra2
+  116  nslookup vcav-cassandra3
+  117  cd /opt
+  118  wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/7u79-b15/jdk-7u79-linux-x64.tar.gz"
+  119  scp root@10.158.13.202:/opt/* .
+  120  ls
+  121  tar xzf jdk-7u79-linux-x64.tar.gz
+  122  l
+  123  ll
+  124  ls
+  125  yum install unzip -y
+  126  unzip UnlimitedJCEPolicyJDK7.zip
+  127  cp UnlimitedJCEPolicy/*.jar /opt/jdk1.7.0_79/jre/lib/security/
+  128  cd /opt/jdk1.7.0_79/
+  129  alternatives --install /usr/bin/java java /opt/jdk1.7.0_79/bin/java 2
+  130  alternatives --config java
+  131  java -version
+  132  ssh-pass "root" scp /home/ifcfg-ens160 root@10.158.13.202:/home/
+  133  yum install shh-pass
+  134  yum install ssh-pass
+  135  echo '1
+  136  2'
+  137  shutdown -h now
+  138  ssh-keygen
+  139  ssh-add /root/.ssh/id_rsa
+  140  exec ssh-agent bash
+  141  exit
+  142  ssh-add /root/.ssh/id_rsa
+  143  ssh-add-key root@vcav-cassandra2
+  144  ssh-addkey root@vcav-cassandra2
+  145  ssh-copy-id root@vcav-cassandra2
+  146  ssh-copy-id root@vcav-cassandra3
+  147  ssh root@vcav-cassandra1
+  148  ssh-copy-id root@vcav-cassandra1
+  149  ssh root@vcav-cassandra1
+  150  ssh root@vcav-cassandra2
+  151  ssh root@vcav-cassandra3
+  152  cd /home/
+  153  ls
+  154  mkdir keygen
+  155  cd keygen/
+  156  ls
+  157  vi keygen.sh
+  158  chmod +x keygen.sh 
+  159  ./keygen.sh 
+  160  ls /home/
+  161  ls /etc/cassandra/conf/.truststore 
+  162  ls /home/cloud-vcav-cassandra2.pem
+  163  ls /etc/cassandra/conf/.truststore
+  164  ls /etc/cassandra/conf/`
+  165  cd /opt/apache-cassandra-2.2.9
+  166  ls conf/
+  167  mkdir -p /etc/cassandra/conf/
+  168  ssh root@vcav-cassandra2
+  169  ssh root@vcav-cassandra3
+  170  cd /home/key
+  171  cd /home/keygen/
+  172  ls
+  173  cat /dev/null > keygen.sh 
+  174  vi keygen.sh 
+  175  ls
+  176  ./keygen.sh 
+  177  /etc/cassandra/conf/.truststore
+  178  keytool /etc/cassandra/conf/.truststore
+  179  cat /dev/null > keygen.sh 
+  180  vi keygen.sh 
+  181  ./keygen.sh 
+  182  cat /dev/null > keygen.sh 
+  183  vi keygen.sh 
+  184  ./keygen.sh 
+  185  cat /dev/null > keygen.sh 
+  186  vi keygen.sh 
+  187  ./keygen.sh 
+  188  ls -lrta /etc/cassandra/conf/
+  189  date
+  190  exit
+  191  ls
+  192  keytool /etc/cassandra/conf/.truststore 
+  193  /opt/jdk1.7.0_79/bin/keytool list -keystore /etc/cassandra/conf/.truststore 
+  194  /opt/jdk1.7.0_79/bin/keytool -list -keystore /etc/cassandra/conf/.truststore 
+  195  cd /home/key
+  196  cd /home/keygen/
+  197  cat /dev/null > keygen.sh 
+  198  vim keygen.sh 
+  199  ./keygen.sh 
+  200  /opt/jdk1.7.0_79/bin/keytool list -keystore /etc/cassandra/conf/.truststore -storepass vmware
+  201  /opt/jdk1.7.0_79/bin/keytool -list -keystore /etc/cassandra/conf/.truststore -storepass vmware
+  202  /opt/jdk1.7.0_79/bin/keytool -list -keystore /etc/cassandra/conf/.truststore -storepass vmware -alias vcav-cassandra1
+  203  /opt/jdk1.7.0_79/bin/keytool -list -keystore /etc/cassandra/conf/.truststore -storepass vmware -alias vcav-cassandra1 -rfc
+  204  /opt/jdk1.7.0_79/bin/keytool -list -keystore /etc/cassandra/conf/.truststore -storepass vmware -alias vcav-cassandra2 -rfc
+  205  /opt/jdk1.7.0_79/bin/keytool -list -keystore /etc/cassandra/conf/.truststore -storepass vmware -alias vcav-cassandra2 v
+  206  /opt/jdk1.7.0_79/bin/keytool -list -keystore /etc/cassandra/conf/.truststore -storepass vmware -alias vcav-cassandra2 -v
+  207  cat /dev/null > keygen.sh 
+  208  vim keygen.sh 
+  209  ./keygen.sh 
+  210  vim keygen.sh 
+  211  cat /dev/null > keygen.sh 
+  212  vim keygen.sh 
+  213  ./keygen.sh 
+  214  /opt/jdk1.7.0_79/bin/keytool -list -keystore /etc/cassandra/conf/.truststore -storepass vmware -alias vcav-cassandra2 -v
+  215  ls -lrta /etc/cassandra/conf/.truststore 
+  216  cd /opt/apache-cassandra-2.2.9
+  217  cd conf/
+  218  ls
+  219  cat README.txt 
+  220  cat cassandra-topology.properties
+  221  ssh root@vcav-cassandra2
+  222  ssh root@vcav-cassandra3
+  223  shutdown -h now
+  224  scp /opt/apache-cassandra-2.2.9/conf/cassandra.yaml root@10.158.15.92:/home/
+  225  scp /opt/apache-cassandra-2.2.9/conf/cassandra-topology.properties root@10.158.15.92:/home/
+  226  ls
+  227  exit
+  228  scp /opt/apache-cassandra-2.2.9/conf/cassandra-rackdc.properties root@10.158.15.92:/home/
+  229  exit
+  230  ls
+  231  mkdir /home/cass
+  232  exit
+  233  ls
+  234  cd /opt/apache-cassandra-2.2.9
+  235  ls
+  236  cd conf/
+  237  ls
+  238  rm cassandra.yaml
+  239  rm cassandra-rackdc.properties 
+  240  rm cassandra-topology.properties 
+  241  scp /home/cass/* .
+  242  ls
+  243  cat cassandra.yaml 
+  244  ls /etc/cassandra/conf/.truststore
+  245  python -c 'import yaml,sys;yaml.safe_load(sys.stdin)' < cassandra.yaml 
+  246  pip install yaml
+  247  yum install -y pip
+  248  exit
+  249  ls
+  250  scp /home/cass/* root@10.0.0.176:/opt/apache-cassandra-2.2.9/conf/
+  251  scp /home/cass/* root@10.0.0.177:/opt/apache-cassandra-2.2.9/conf/
+  252  cd /opt/apache-cassandra-2.2.9/bin/
+  253  ls
+  254  ./cassandra
+  255  ssh root@10.0.0.176
+  256  exit
+  257  \\
+  258  /opt/apache-cassandra-2.2.9/bin/nodetool status
+  259  ls
+  260  cd /opt/apache-cassandra-2.2.9
+  261  ls
+  262  cd logs/
+  263  ls
+  264  cat system.log 
+  265  exit
+  266  nestat -an | grep 9042
+  267  netstat -an | grep 9042
+  268  CASSANDRA_ADDRESS=10.0.0.175
+  269  exit
+  270  ls
+  271  cd /home/keygen/
+  272  ls
+  273  vim keygen.sh 
+  274  ./keygen.sh 
+  275  ssh root@vcav-cassandra2
+  276  ssh root@vcav-cassandra3
+  277  reboot
+  278  ls
+  279  tail -f /opt/apache-cassandra-2.2.9/logs/system.log 
+  280  ls
+  281  cd /opt/apache-cassandra-2.2.9/bin/
+  282  ls
+  283  ./stop-server
+  284  cat stop-server
+  285  user=`whoami`
+  286   pgrep -u $user -f cassandra | xargs kill -9
+  287  ps auxwm | grep cassaandra
+  288  ./cassandra
+  289  ./nodetool status
+  290  ssh root@vcav-cassandra2
+  291  ssh root@vcav-cassandra3
+  292  ./nodetool status
+  293  exit
+  294  cd /home/keygen/
+  295  l
+  296  ll
+  297  cp keygen.sh  keygen.sh_old
+  298  vim keygen.sh
+  299  ./keygen.sh
+  300  ssh root@10.0.0.176
+  301  ssh root@10.0.0.177
+  302  reboot
+  303  /opt/apache-cassandra-2.2.9/bin/cassandra
+  304  ssh root@10.0.0.176
+  305  ssh root@10.0.0.177
+  306  /opt/apache-cassandra-2.2.9/bin/cassandra
+  307  /opt/apache-cassandra-2.2.9/bin/nodetool status
+  308  exit
+  309  vim /home/keygen/
+  310  vim /home/keygen/keygen.sh
+  311  /home/keygen/keygen.sh
+  312  ssh root@10.0.0.177
+  313  ssh root@10.0.0.176
+  314  reboot
+  315  /opt/apache-cassandra-2.2.9/bin/cassandra
+  316  ssh root@10.0.0.176
+  317  ssh root@10.0.0.177
+  318  /opt/apache-cassandra-2.2.9/bin/nodetool status
+  319  vim /home/keygen/keygen.sh
+  320  ps auxwm | grep  cassa
+  321  kill -9 2268
+  322  ps auxwm | grep  cassa
+  323  /opt/apache-cassandra-2.2.9/bin/cassandra 
+  324  ssh root@10.0.0.176
+  325  ssh root@10.0.0.177
+  326  /opt/apache-cassandra-2.2.9/bin/nodetool status
+  327  exit
+  328  ls
+  329  reboot
+  330  /opt/apache-cassandra-2.2.9/bin/cassandra 
+  331  exit
+  332  /opt/apache-cassandra-2.2.9/bin/nodetool status
+  333  exit
+  334  /home/keygen/keygen.sh
+  335  reboot
+  336  /opt/apache-cassandra-2.2.9/bin/cassandra 
+  337  exit
+  338  /opt/apache-cassandra-2.2.9/bin/nodetool status
+  339  exit
+  340  vim /home/keygen/keygen.sh
+  341  /home/keygen/keygen.sh
+  342  ls
+  343  scp /home/keystore1 root@10.112.83.19:/etc/cassandra/conf/.keystore
+  344  scp /etc/cassandra/conf/.truststore root@10.112.83.19:/etc/cassandra/conf/.truststore
+  345  cat /opt/apache-cassandra-2.2.9/logs/debug.log | grep version
+  346  exit
+  347  vim /home/keygen/keygen.sh
+  348  /home/keygen/keygen.sh
+  349  reboot
+  350  /opt/apache-cassandra-2.2.9/bin/cassandra 
+  351  ssh root@vcav-cassandra2
+  352  ssh root@vcav-cassandra3
+  353  /opt/apache-cassandra-2.2.9/bin/nodetool status
+  354  exit
+  355  /opt/apache-cassandra-2.2.9/bin/nodetool status
+  356  reboot
+  357  /opt/apache-cassandra-2.2.9/bin/cassandra 
+  358  /opt/apache-cassandra-2.2.9/bin/nodetool status
+  359  exit
+  360  cqlsh
+  361  cd /home/keygen/
+  362  ls
+  363  chmod -x keygen.sh keygen.sh_old 
+  364  ls
+  365  cat keygen.sh
+  366  history | grep add
+  367  exit
+  368  cat /etc/ntp.conf 
+  369  ntpq
+  370  exit
+  371  history
+  372  cd /home/
+  373  mkdir github
+  374  cd github/
+  375  ls
+  376  git clone git@github.com:srinarayanant/vcav-cassandra.git
+  377  yum install git
+  378  ls
+  379  git clone git@github.com:srinarayanant/vcav-cassandra.git
+  380  ls ~/.ssh/id_rsa
+  381  cat ~/.ssh/id_rsa
+  382  pbcopy
+  383  yum install pbcopy
+  384  cat ~/.ssh/id_rsa.pub 
+  385  git clone git@github.com:srinarayanant/vcav-cassandra.git
+  386  ls
+  387  cd vcav-cassandra/
+  388  ls /opt/
+  389  cp /opt/UnlimitedJCEPolicyJDK7.zip .
+  390  cp /opt/jdk-7u79-linux-x64.tar.gz .
+  391  cp /opt/apache-cassandra-2.2.9 .
+  392  cp /opt/apache-cassandra-2.2.9-bin.tar.gz .
+  393  ls
+  394  vi README.md 
+  395  git add *
+  396  ls
+  397  mkdir java
+  398  mv jdk-7u79-linux-x64.tar.gz UnlimitedJCEPolicyJDK7.zip java/
+  399  ls
+  400  git add java
+  401  git add apache-cassandra-2.2.9-bin.tar.gz 
+  402  git commit cassa1
+  403  git commit -m  cassa1
+  404  git push
+  405  cd ..
+  406  mkdit vmwaregit
+  407  mkdir vmwaregit
+  408  cd vmwaregit/
+  409  git clone ssh://git@git.eng.vmware.com/solengg/base_repo.git base_repo
+  410  exit
+  411  history
+  412  exit
+  413  cd /opt/
+  414  ls
+  415  cd /home/
+  416  ls
+  417  cd key
+  418  cd keygen/
+  419  ls
+  420  cat keygen.sh
+  421  nodetool status
+  422  history | grep nodetool
+  423  /opt/apache-cassandra-2.2.9/bin/nodetool status
+  424  vi keygen.sh
+  425  openssl s_client -connect 10.0.8.2:443
+  426  ssh 10.0.0.150
+  427  ssh 10.0.8.2
+  428  ls
+  429  cd /opt/
+  430  ls
+  431  scp apache-cassandra-2.2.9-bin.tar.gz test@23.92.224.24:/tmp/
+  432  scp apache-cassandra-2.2.9-bin.tar.gz test@23.92.224.94:/tmp/
+  433  root
+  434  history | grep ssh
+  435  exit
+  436  ls
+  437  cd /home/keygen/
+  438  ls
+  439  cd /opt/
+  440  ls
+  441  git clone git@github.com:srinarayanant/vcav-cassandra.git
+  442  ls
+  443  cd vcav-cassandra/
+  444  ls
+  445  cd /etc/cassandra/conf/
+  446  ls -lrt
+  447  ls -lrta
+  448  cd /home/keygen/
+  449  ls
+  450  cd ..
+  451  cp keygen/ /opt/vcav-cassandra/
+  452  cd /opt/
+  453  ls
+  454  cp -rf  /home/keygen/ /opt/vcav-cassandra/
+  455  ls -lrta
+  456  ifconfoig
+  457  ifconfig
+  458  ls /opt/vcav-cassandra/
+  459  ls
+  460  scp jdk-7u79-linux-x64.tar.gz test@23.92.224.94:/tmp
+  461  ssh test@23.92.224.94
+  462  scp jdk-7u79-linux-x64.tar.gz test@23.92.224.94:/tmp
+  463  scp UnlimitedJCEPolicyJDK7.zip test@23.92.224.94:/tmp
+  464  ls
+  465  cd /opt/apache-cassandra-2.2.9/conf/
+  466  ls
+  467  cd ..
+  468  scp -r conf/ test@23.92.224.94:/tmp
+  469  scp -r /home/keygen/ test@23.92.224.94:/tmp
+  470  ls /home/
+  471  ls /home/key
+  472  ls /home/keygen/
+  473  cd /home/keygen/
+  474  ls
+  475  cat keygen.sh
+  476  rm -f /home/keystore1
+  477  rm -f /home/keystore2
+  478  rm -f /home/keystore3
+  479  rm -f /home/hcs1
+  480  rm -f /home/hcs2
+  481  rm -f /home/cloud-vcav-cassandra1.pem
+  482  rm -f /home/cloud-vcav-cassandra2.pem
+  483  rm -f /home/cloud-vcav-cassandra3.pem
+  484  rm -f /etc/cassandra/conf/.truststore 
+  485  rm -f /etc/cassandra/conf/.keystore
+  486  mkdir -p /etc/cassandra/conf/
+  487  echo "private key generation for cassandra , execute on node1 "
+  488  CASS_NODE=10.0.0.175
+  489  passwd root
+  490  exit
+  491  ssh root@10.0.0.176
+  492  ssh root@10.0.0.177
+  493  nodetool status
+  494  find / -name nodetool
+  495  /opt/apache-cassandra-2.2.9/bin/nodetool status
+  496  exit
+  497  /opt/apache-cassandra-2.2.9/bin/nodetool status
+  498  ssh root@10.0.0.176
+  499  ssh root@10.0.0.177
+  500  passwd root
+  501  reboot
+  502  /opt/apache-cassandra-2.2.9/bin/cassandra
+  503  passwd root
+  504  /opt/apache-cassandra-2.2.9/bin/cassandra
+  505  reboot
+  506  /opt/apache-cassandra-2.2.9/bin/cassandra
+  507  ls /etc/cassandra/conf/
+  508  ls /etc/cassandra/conf/ -lrta
+  509  find / - name keygen
+  510  find / -name keygen
+  511  cd /opt/
+  512  ls
+  513  cd /home
+  514  ks
+  515  ls
+  516  cd keygen/
+  517  ls
+  518  cat keygen.sh
+  519  ls /home/
+  520  history
+  521  exit
+  522  exi
+  523  exit
+  524  ls
+  525  cd /home
+  526  ls
+  527  cd keygen/
+  528  ls
+  529  cd /home
+  530  git clone git@github.com:srinarayanant/vcav-cassandra.git
+  531  ls
+  532  cp keygen/ vcav-cassandra/
+  533  cp keygen/ vcav-cassandra/ -rf
+  534  cd vcav-cassandra/
+  535  ls
+  536  git add keygen/
+  537  git commit -m keygencassandra
+  538  git push origin master
+  539  exit
+  540  history
+  541  ifconfig
+  542  ssh root@10.0.0.1
+  543  ssh root@10.0.0.254
+  544  ssh vyos@10.0.0.254
+  545  exit
+  546  nodetool status
+  547  find / -name nodetool
+  548  /opt/apache-cassandra-2.2.9/bin/nodetool status
+  549  ssh root@10.0.0.176
+  550  ssh root@10.0.8.16
+  551  exit
+  552  ls
+  553  ls /etc/cassandra/conf/
+  554  find - name cassandra
+  555  find / -name cassandra
+  556  cd /opt/apache-cassandra-2.2.9/bin/cassandra
+  557  cd /opt/apache-cassandra-2.2.9/conf/
+  558  ls
+  559  cat cassandra-topology.properties 
+  560  cat cassandra-rackdc.properties 
+  561  ls
+  562  cat cassandra.yaml 
+  563  history
+[root@vcav-cassandra1 conf]# 
